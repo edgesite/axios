@@ -1549,13 +1549,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	    }
 	  });
 	
-	  utils.forEach([
-	    'baseURL', 'transformRequest', 'transformResponse', 'paramsSerializer',
-	    'timeout', 'withCredentials', 'adapter', 'responseType', 'xsrfCookieName',
-	    'xsrfHeaderName', 'onUploadProgress', 'onDownloadProgress', 'maxContentLength',
-	    'validateStatus', 'maxRedirects', 'httpAgent', 'httpsAgent', 'cancelToken',
-	    'socketPath'
-	  ], function defaultToConfig2(prop) {
+	  var keys = Object.keys(config1).concat(Object.keys(config2));
+	
+	  utils.forEach(keys, function defaultToConfig2(prop) {
 	    if (typeof config2[prop] !== 'undefined') {
 	      config[prop] = config2[prop];
 	    } else if (typeof config1[prop] !== 'undefined') {
